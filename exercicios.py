@@ -27,9 +27,12 @@ indesejadas = ["vasco","vasco,",", vasco",". vasco","vasco.","botafogo", ", bota
 print(removerPalavrasIndesejadas(texto, indesejadas)) """
 # Exercício 07
 def alternarMaiusculaEMinuscula(texto):
-    for i in range(len(texto)): 
-        if i % 2 == 0: 
-            texto[i] = texto[i].upper()
-    return texto
-texto = "desenvolvendo habilidades"
+    novoTexto = []
+    for i in range(len(texto)):
+        if i % 2 == 0:
+            novoTexto.append(texto[i].upper())
+        else:
+            novoTexto.append(texto[i].lower())
+    return "".join(novoTexto)
+texto = "desenvolvendo habilidades, desenvolvendo habilidades"
 print(alternarMaiusculaEMinuscula(texto))
