@@ -7,7 +7,7 @@
 # Exercício 04
 # print([sum(1 for c in texto if c.lower() in "aáâãàeêéèiîíìoôóõòuúûù") for texto in ["Frase um", "Frase dois", "Frase três"]])
 # Exercício 05
-maioresDeIdade = lambda lista:list(filter(lambda x:x["idade"]>=18,lista))
+""" maioresDeIdade = lambda lista:list(filter(lambda x:x["idade"]>=18,lista))
 pessoas = [
     {"nome": "João", "idade": 25},
     {"nome": "Maria", "idade": 17},
@@ -18,4 +18,10 @@ pessoas = [
     {"nome": "Gabriel", "idade": 22},
     {"nome": "Bianca", "idade": 14}
 ]
-print(maioresDeIdade(pessoas))
+print(maioresDeIdade(pessoas)) """
+# Exercício 06
+def removerPalavrasIndesejadas(texto, palavrasIndesejadas):
+    return " ".join([palavra for palavra in texto.split() if palavra.lower() not in palavrasIndesejadas])
+texto = "O melhor time do Rio é o Flamengo, Vasco, Botafogo, Fluminense"
+indesejadas = ["vasco","vasco,",", vasco",". vasco","vasco.","botafogo", ", botafogo", "botafogo,","botafogo.", ", fluminense", "fluminense,","fluminense.", ". fluminense","fluminense"]
+print(removerPalavrasIndesejadas(texto, indesejadas))
