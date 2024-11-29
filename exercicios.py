@@ -20,8 +20,16 @@ pessoas = [
 ]
 print(maioresDeIdade(pessoas)) """
 # Exercício 06
-def removerPalavrasIndesejadas(texto, palavrasIndesejadas):
+""" def removerPalavrasIndesejadas(texto, palavrasIndesejadas):
     return " ".join([palavra for palavra in texto.split() if palavra.lower() not in palavrasIndesejadas])
 texto = "O melhor time do Rio é o Flamengo, Vasco, Botafogo, Fluminense"
 indesejadas = ["vasco","vasco,",", vasco",". vasco","vasco.","botafogo", ", botafogo", "botafogo,","botafogo.", ", fluminense", "fluminense,","fluminense.", ". fluminense","fluminense"]
-print(removerPalavrasIndesejadas(texto, indesejadas))
+print(removerPalavrasIndesejadas(texto, indesejadas)) """
+# Exercício 07
+def alternarMaiusculaEMinuscula(texto):
+    for i in range(len(texto)): 
+        if i % 2 == 0: 
+            texto[i] = texto[i].upper()
+    return texto
+texto = "desenvolvendo habilidades"
+print(alternarMaiusculaEMinuscula(texto))
