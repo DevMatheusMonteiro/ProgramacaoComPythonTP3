@@ -83,11 +83,16 @@ def menu():
         escolha = entrarNumero("1 - Inserir nova palavra\n2 - Exibir lista\n0 - Encerrar\nEscolha: ")
 menu() """
 # Exercício 11
-def combinarListas(lista1, lista2):
+""" def combinarListas(lista1, lista2):
     listaCombinada = lista1[:]
     listaCombinada.extend(lista2)
     return listaCombinada
 lista1 = [1, 2, 3]
 lista2 = [3, 2, 1]
 listaCombinada = combinarListas(lista1, lista2)
-print(listaCombinada)
+print(listaCombinada) """
+# Exercício 12
+def removerDuplicatas(lista):
+    return list(set(lista))
+lista = ["maçã", "maçã", "pera"]
+print(removerDuplicatas(lista))
