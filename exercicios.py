@@ -36,8 +36,49 @@ print(alternarMaiusculaEMinuscula(texto)) """
 lista = [[2,4,6], [4, 5, 1, 6], [2, 2, 6]]
 print(retornarElementosUnicos(lista)) """
 # Exercício 09
-def intercalarListas(lista1, lista2):
+""" def intercalarListas(lista1, lista2):
     return [palavra for tupla in zip(lista1, lista2) for palavra in tupla] + lista1[len(lista2):] + lista2[len(lista1):]
 lista1 = ["maçã", "banana", "cereja"]
 lista2 = ["uva", "laranja", "abacate","limão","abacaxi"]
-print(intercalarListas(lista1, lista2))
+print(intercalarListas(lista1, lista2)) """
+# Exercício 10
+def entrarPalavra():
+    while True:
+        palavra = input("Entre com a palavra: ")
+        if (palavra == None or palavra.strip() == ""): print("Erro: palavra não pode ser nula ou vazia.") 
+        else: return palavra
+def entrarNumero(mensagem):
+    while True:
+        try:
+            numero = int(input(mensagem))
+            return numero
+        except:
+            print("Erro: número inválido.")
+def entrarPosicao(lista):
+    while True:
+        posicao = entrarNumero("Entre com a posição desejada que deseja inserir a nova palavra: ")
+        if posicao < 0 or posicao >= len(lista): print("Erro: número fora dos limites da lista.")
+        else: return posicao
+def exibirLista(lista):
+    if not lista:
+        print("Lista Vazia")
+    else:
+        for i,palavra in enumerate(lista):
+            print(f"{i} - {palavra}")
+def inserirPalavra(lista):
+    palavra = entrarPalavra()
+    if len(lista) < 3:
+        lista.append(palavra)
+    else:
+        posicao = entrarPosicao(lista)
+        lista.insert(posicao, palavra)
+def menu():
+    lista = []
+    escolha = entrarNumero("1 - Inserir nova palavra\n2 - Exibir lista\n0 - Encerrar\nEscolha: ")
+    while escolha != 0:
+        if escolha == 1: inserirPalavra(lista)
+        elif escolha == 2: exibirLista(lista)
+        elif escolha == 0: print("Encerrado!")
+        else: print("Escolha inválida!")
+        escolha = entrarNumero("1 - Inserir nova palavra\n2 - Exibir lista\n0 - Encerrar\nEscolha: ")
+menu()
