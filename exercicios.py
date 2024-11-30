@@ -26,13 +26,12 @@ texto = "O melhor time do Rio é o Flamengo, Vasco, Botafogo, Fluminense"
 indesejadas = ["vasco","vasco,",", vasco",". vasco","vasco.","botafogo", ", botafogo", "botafogo,","botafogo.", ", fluminense", "fluminense,","fluminense.", ". fluminense","fluminense"]
 print(removerPalavrasIndesejadas(texto, indesejadas)) """
 # Exercício 07
-def alternarMaiusculaEMinuscula(texto):
-    novoTexto = []
-    for i in range(len(texto)):
-        if i % 2 == 0:
-            novoTexto.append(texto[i].upper())
-        else:
-            novoTexto.append(texto[i].lower())
-    return "".join(novoTexto)
+""" def alternarMaiusculaEMinuscula(texto):
+    return "".join(letra.upper() if i % 2 == 0 else letra.lower() for i, letra in enumerate(texto))
 texto = "desenvolvendo habilidades, desenvolvendo habilidades"
-print(alternarMaiusculaEMinuscula(texto))
+print(alternarMaiusculaEMinuscula(texto)) """
+# Exercício 08
+def retornarElementosUnicos(matriz):
+    return set(i for j in matriz for i in j)
+lista = [[2,4,6], [4, 5, 1, 6], [2, 2, 6]]
+print(retornarElementosUnicos(lista))
