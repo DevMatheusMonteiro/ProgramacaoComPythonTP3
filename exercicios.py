@@ -42,7 +42,7 @@ lista1 = ["maçã", "banana", "cereja"]
 lista2 = ["uva", "laranja", "abacate","limão","abacaxi"]
 print(intercalarListas(lista1, lista2)) """
 # Exercício 10
-def dividirListaDePalavras(lista, n):
+""" def dividirListaDePalavras(lista, n):
     maiorQueN = []
     menorIgualAN = []
     for palavra in lista:
@@ -52,7 +52,7 @@ def dividirListaDePalavras(lista, n):
             maiorQueN.append(palavra)
     return [maiorQueN, menorIgualAN]
 lista = ["maçã", "banana", "uva", "laranja", "kiwi"]
-print(dividirListaDePalavras(lista, 5))
+print(dividirListaDePalavras(lista, 5)) """
 # Exercício 11
 """ def entrarPalavra():
     while True:
@@ -136,3 +136,65 @@ removerUltimoItem(listaDeCompras) """
         print("Erro: número fora dos limites do texto")
 manipularString("Python é incrível") """
 # Exercício 16
+def entrarString(mensagem):
+    while True:
+        string = input(mensagem).strip()
+        if string == None or string == "":
+            print("Erro: string nula ou vazia")
+        else: return string
+def entrarNumero(mensagem):
+    while True:
+        try:
+            numero = int(input(mensagem))
+            return numero
+        except:
+            print("Erro: número inválido")
+def removerItem(lista):
+    itemRemovido = None
+    if not lista:
+        return print("Lista vazia, não há itens para remover.")
+    while itemRemovido == None:
+        string = entrarString("Entre com o índice ou nome do item que deseja remover: ").lower()
+        try:
+            if string.isdigit():
+                i = int(string)
+                itemRemovido = lista.pop(i)
+            else:
+                if string in lista:
+                    lista.remove(string)
+                    itemRemovido = string
+                else:
+                    print("Erro: item não encontrado")
+        except IndexError:
+            print("Erro: índice fora do intervalo")
+    print(f"Produto {itemRemovido} removido com sucesso!")
+def adicionarItem(lista):
+    while True:
+        indice = entrarNumero("Entre com a posição que deseja inserir o item: ")
+        item = entrarString("Entre com o nome do item: ").strip().lower()
+        if item not in lista:
+            lista.insert(indice, item)
+            return print(f"Produto {item} adicionado com sucesso")
+        print("Erro: item já adicionado na lista")
+def exibirLista(lista):
+    if not lista:
+        return print("Lista vazia")
+    for i, item in enumerate(lista):
+        print(f"{i} - {item}")
+    print()
+def menu(lista):
+    escolha = entrarNumero("1 - Adicionar item\n2 - Remover item\n3 - Exibir itens\n0 - Encerrar\nEscolha: ")
+    while escolha != 0:
+        if escolha == 1:
+            adicionarItem(lista)
+        elif escolha == 2:
+            removerItem(lista)
+        elif escolha == 3:
+            exibirLista(lista)
+        elif escolha == 0:
+            print("Encerrado!")
+        else: 
+            print("Escolha inválida")
+        escolha = entrarNumero("1 - Adicionar item\n2 - Remover item\n3 - Exibir itens\n0 - Encerrar\nEscolha: ")
+lista = ["arroz", "feijão", "leite", "ovos"]
+menu(lista)
