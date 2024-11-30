@@ -31,7 +31,13 @@ print(removerPalavrasIndesejadas(texto, indesejadas)) """
 texto = "desenvolvendo habilidades, desenvolvendo habilidades"
 print(alternarMaiusculaEMinuscula(texto)) """
 # Exercício 08
-def retornarElementosUnicos(matriz):
+""" def retornarElementosUnicos(matriz):
     return set(i for j in matriz for i in j)
 lista = [[2,4,6], [4, 5, 1, 6], [2, 2, 6]]
-print(retornarElementosUnicos(lista))
+print(retornarElementosUnicos(lista)) """
+# Exercício 09
+def intercalarListas(lista1, lista2):
+    return [palavra for tupla in zip(lista1, lista2) for palavra in tupla] + lista1[len(lista2):] + lista2[len(lista1):]
+lista1 = ["maçã", "banana", "cereja"]
+lista2 = ["uva", "laranja", "abacate","limão","abacaxi"]
+print(intercalarListas(lista1, lista2))
