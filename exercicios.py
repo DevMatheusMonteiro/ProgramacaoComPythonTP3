@@ -42,7 +42,7 @@ lista1 = ["maçã", "banana", "cereja"]
 lista2 = ["uva", "laranja", "abacate","limão","abacaxi"]
 print(intercalarListas(lista1, lista2)) """
 # Exercício 10
-def entrarPalavra():
+""" def entrarPalavra():
     while True:
         palavra = input("Entre com a palavra: ")
         if (palavra == None or palavra.strip() == ""): print("Erro: palavra não pode ser nula ou vazia.") 
@@ -81,4 +81,13 @@ def menu():
         elif escolha == 0: print("Encerrado!")
         else: print("Escolha inválida!")
         escolha = entrarNumero("1 - Inserir nova palavra\n2 - Exibir lista\n0 - Encerrar\nEscolha: ")
-menu()
+menu() """
+# Exercício 11
+def combinarListas(lista1, lista2):
+    listaCombinada = lista1[:]
+    listaCombinada.extend(lista2)
+    return listaCombinada
+lista1 = [1, 2, 3]
+lista2 = [3, 2, 1]
+listaCombinada = combinarListas(lista1, lista2)
+print(listaCombinada)
