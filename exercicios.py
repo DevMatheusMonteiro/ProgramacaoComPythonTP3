@@ -92,7 +92,21 @@ lista2 = [3, 2, 1]
 listaCombinada = combinarListas(lista1, lista2)
 print(listaCombinada) """
 # Exercício 12
-def removerDuplicatas(lista):
+""" def removerDuplicatas(lista):
     return list(set(lista))
 lista = ["maçã", "maçã", "pera"]
-print(removerDuplicatas(lista))
+print(removerDuplicatas(lista)) """
+# Exercício 13
+def exibirListaDeCompras(lista):
+    if not lista:
+        return print("Lista de compras vazia!")
+    for i,item in enumerate(lista):
+        print(f"{i+1} - {item}")
+def removerUltimoItem(lista):
+    if not lista:
+        return print("Lista de compras vazia! Não há mais itens para remover.")
+    lista.pop()
+    exibirListaDeCompras(lista)
+    
+listaDeCompras = ["Arroz", "Feijão", "Leite", "Ovos"]
+removerUltimoItem(listaDeCompras)
