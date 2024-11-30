@@ -42,6 +42,18 @@ lista1 = ["maçã", "banana", "cereja"]
 lista2 = ["uva", "laranja", "abacate","limão","abacaxi"]
 print(intercalarListas(lista1, lista2)) """
 # Exercício 10
+def dividirListaDePalavras(lista, n):
+    maiorQueN = []
+    menorIgualAN = []
+    for palavra in lista:
+        if len(palavra) <= n:
+            menorIgualAN.append(palavra)
+        else:
+            maiorQueN.append(palavra)
+    return [maiorQueN, menorIgualAN]
+lista = ["maçã", "banana", "uva", "laranja", "kiwi"]
+print(dividirListaDePalavras(lista, 5))
+# Exercício 11
 """ def entrarPalavra():
     while True:
         palavra = input("Entre com a palavra: ")
@@ -82,7 +94,7 @@ def menu():
         else: print("Escolha inválida!")
         escolha = entrarNumero("1 - Inserir nova palavra\n2 - Exibir lista\n0 - Encerrar\nEscolha: ")
 menu() """
-# Exercício 11
+# Exercício 12
 """ def combinarListas(lista1, lista2):
     listaCombinada = lista1[:]
     listaCombinada.extend(lista2)
@@ -91,12 +103,12 @@ lista1 = [1, 2, 3]
 lista2 = [3, 2, 1]
 listaCombinada = combinarListas(lista1, lista2)
 print(listaCombinada) """
-# Exercício 12
+# Exercício 13
 """ def removerDuplicatas(lista):
     return list(set(lista))
 lista = ["maçã", "maçã", "pera"]
 print(removerDuplicatas(lista)) """
-# Exercício 13
+# Exercício 14
 """ def exibirListaDeCompras(lista):
     if not lista:
         return print("Lista de compras vazia!")
@@ -110,8 +122,8 @@ def removerUltimoItem(lista):
     
 listaDeCompras = ["Arroz", "Feijão", "Leite", "Ovos"]
 removerUltimoItem(listaDeCompras) """
-# Exercício 14
-def manipularString(texto):
+# Exercício 15
+""" def manipularString(texto):
     print(f"String original: {texto}")
     try:
         inicio = int(input("Informe o índice de início: "))
@@ -122,4 +134,5 @@ def manipularString(texto):
         print("Erro: número inválido")
     except IndexError:
         print("Erro: número fora dos limites do texto")
-manipularString("Python é incrível")
+manipularString("Python é incrível") """
+# Exercício 16
