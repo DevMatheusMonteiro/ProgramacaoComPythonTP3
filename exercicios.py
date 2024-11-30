@@ -97,7 +97,7 @@ print(listaCombinada) """
 lista = ["maçã", "maçã", "pera"]
 print(removerDuplicatas(lista)) """
 # Exercício 13
-def exibirListaDeCompras(lista):
+""" def exibirListaDeCompras(lista):
     if not lista:
         return print("Lista de compras vazia!")
     for i,item in enumerate(lista):
@@ -109,4 +109,17 @@ def removerUltimoItem(lista):
     exibirListaDeCompras(lista)
     
 listaDeCompras = ["Arroz", "Feijão", "Leite", "Ovos"]
-removerUltimoItem(listaDeCompras)
+removerUltimoItem(listaDeCompras) """
+# Exercício 14
+def manipularString(texto):
+    print(f"String original: {texto}")
+    try:
+        inicio = int(input("Informe o índice de início: "))
+        fim = int(input("Informe o índice de fim: "))
+        substring = texto[inicio:fim]
+        print(f"Substring correspondente: \"{substring}\"")
+    except ValueError:
+        print("Erro: número inválido")
+    except IndexError:
+        print("Erro: número fora dos limites do texto")
+manipularString("Python é incrível")
